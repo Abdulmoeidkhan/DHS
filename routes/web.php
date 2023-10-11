@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('signUp');
-});
+    return view('pages.signIn');
+})->name("signIn");
+
+Route::get('/signUp', function () {
+    return view('pages.signUp');
+})->name("signUp");
