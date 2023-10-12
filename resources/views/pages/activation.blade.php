@@ -46,11 +46,6 @@
             </span>
             <span class="app-brand-text demo text-heading fw-bold">BXSS Event Managment System</span>
         </a>
-        @if (session('error'))
-        <script>
-            alert("{{session('error')}}");
-        </script>
-        @endif
         <!-- /Logo -->
         <div class="authentication-inner row m-0">
             <!-- /Left Text -->
@@ -60,16 +55,17 @@
             </div>
             <!-- /Left Text -->
 
+            @if (session('error'))
+            <script>
+                alert("{{session('error')}}");
+            </script>
+            @endif
             <!-- Register -->
             <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg position-relative py-sm-5 px-4 py-4">
                 <div class="w-px-400 mx-auto pt-5 pt-lg-0">
                     <h4 class="mb-2 fw-semibold">Adventure starts here 🚀</h4>
                     <p class="mb-4">Make your app management easy and fun!</p>
-                    <form id="formAuthentication" class="mb-3" action="{{route('signUp.request')}}" method="POST">
-                        <div class="form-floating form-floating-outline mb-3">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" autofocus />
-                            <label for="username">Username</label>
-                        </div>
+                    <form id="formAuthentication" class="mb-3" action="{{route('activation.request')}}" method="POST">
                         <div class="form-floating form-floating-outline mb-3">
                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
                             <label for="email">Email</label>
@@ -83,42 +79,18 @@
                                 <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
                             </div>
                         </div>
-                        <div class="mb-3 form-password-toggle">
-                            <div class="input-group input-group-merge">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="password" id="confirmPass" class="form-control" name="confirmPass" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="confirm password" />
-                                    <label for="confirmPass">Confirm Password</label>
-                                </div>
-                                <span class="input-group-text cursor-pointer"><i class="mdi mdi-eye-off-outline"></i></span>
-                            </div>
-                        </div>
-                        <!-- <div class="form-floating form-floating-outline mb-3">
-                            <input type="text" class="form-control" id="csrf" name="csrf" placeholder="Enter your csrf" autofocus />
-                            <label for="CSRF">CSRF</label>
-                        </div> -->
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
-                                <label class="form-check-label" for="terms-conditions">
-                                    I agree to
-                                    <a href="javascript:void(0);">privacy policy & terms</a>
-                                </label>
-                            </div>
+                        <div class="form-floating form-floating-outline mb-3">
+                            <input type="text" class="form-control" id="activationCode" name="activationCode" placeholder="Enter your Activation Code" />
+                            <label for="activationCode">Activation Code</label>
                         </div>
                         @csrf
-                        <input type="submit" name="Sign Up" value="Sign Up" class="btn btn-danger d-grid w-100" style="background:#e04440;" />
+                        <input type="submit" name="Activation" value="Activate" class="btn btn-danger d-grid w-100" style="background:#e04440;" />
                     </form>
 
                     <p class="text-center mt-2">
                         <span>Already have an account?</span>
                         <a href="{{route('signIn')}}">
                             <span>Sign in instead</span>
-                        </a>
-                    </p>
-                    <p class="text-center mt-2">
-                        <span>Need to Activate Account?</span>
-                        <a href="{{route('accountActivation')}}">
-                            <span>Activate Account</span>
                         </a>
                     </p>
 

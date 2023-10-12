@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('delegations', function (Blueprint $table) {
             $table->id();
-            $table->uuid('id')->unique();
+            $table->uuid('uid')->unique();
             $table->string('country');
             $table->string('invited_by');
             $table->string('delegation_response')->default("Awaited");

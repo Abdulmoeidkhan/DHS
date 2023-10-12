@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('delegates', function (Blueprint $table) {
             $table->id();
-            $table->uuid('id')->unique();
+            $table->uuid('uid')->unique();
             $table->string('country');
             $table->integer('self')->default(1);
             $table->string('rank');
@@ -22,7 +22,6 @@ return new class extends Migration
             $table->integer('delegation');
             $table->string('designation')->nullable();
             $table->string('organistaion')->nullable();
-            $table->string('designation')->nullable();
             $table->string('passport')->nullable();
             $table->timestamps();
         });

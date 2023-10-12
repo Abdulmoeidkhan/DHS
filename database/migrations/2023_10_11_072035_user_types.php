@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('user_type', function (Blueprint $table) {
             $table->id();
-            $table->uuid('id')->unique();
+            $table->uuid('uid')->unique();
             $table->string('type');
         });
     }
