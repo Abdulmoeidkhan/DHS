@@ -117,7 +117,7 @@
     <!-- / Content -->
 
     @include('layouts.footer')
-
+    @livewireScripts
     <!-- Page JS -->
     <script src="{{asset('assets/js/pages-auth.js')}}"></script>
     <!-- Vendors JS -->

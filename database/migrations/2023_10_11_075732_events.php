@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('logo')->nullable();
             $table->string('banner')->nullable();
             $table->string('description')->nullable();
+            $table->string('delegations')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();
         });

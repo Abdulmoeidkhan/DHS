@@ -27,6 +27,10 @@ Route::get('/accountActivation', function () {
     return view('pages.activation');
 })->name("accountActivation");
 
+Route::get('/userList', function () {
+    return view('pages.userList');
+})->name("userList");
+
 Route::post('signUpRequest',[SignUpController::class,'signUp'])->name('signUp.request');
 Route::post('signInRequest',[SignInController::class,'signIn'])->name('signIn.request');
 Route::post('activationRequest',[ActivationRequest::class,'activation'])->name('activation.request');
